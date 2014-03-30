@@ -4228,6 +4228,8 @@ let
 
   cminpack = callPackage ../development/libraries/cminpack { };
 
+  cocaine_core = callPackage ../development/libraries/cocaine-core { };
+
   cogl = callPackage ../development/libraries/cogl { };
 
   coin3d = callPackage ../development/libraries/coin3d { };
