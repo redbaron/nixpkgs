@@ -4230,6 +4230,8 @@ let
 
   cocaine_core = callPackage ../development/libraries/cocaine-core { };
 
+  cocaine_plugins = callPackage ../development/libraries/cocaine-plugins { };
+
   cocaine_framework_native = callPackage ../development/libraries/cocaine-framework-native { };
 
   cogl = callPackage ../development/libraries/cogl { };
