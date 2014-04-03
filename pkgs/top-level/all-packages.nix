@@ -5323,6 +5323,8 @@ let
 
   liburcu = callPackage ../development/libraries/liburcu { };
 
+  liburiparser = callPackage ../development/libraries/liburiparser { };
+
   libusb = callPackage ../development/libraries/libusb {
     stdenv = if stdenv.isDarwin
       then overrideGCC stdenv gccApple
