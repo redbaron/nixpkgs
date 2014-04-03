@@ -5279,6 +5279,8 @@ let
 
   libspatialite = callPackage ../development/libraries/libspatialite { };
 
+  libswarm2 = callPackage ../development/libraries/libswarm2 { };
+
   libtasn1 = callPackage ../development/libraries/libtasn1 { };
 
   libtheora = callPackage ../development/libraries/libtheora { };
