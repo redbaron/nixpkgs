@@ -4300,6 +4300,8 @@ let
 
   dxflib = callPackage ../development/libraries/dxflib {};
 
+  eblob = callPackage ../development/libraries/eblob { };
+
   eigen = callPackage ../development/libraries/eigen {};
 
   eigen2 = callPackage ../development/libraries/eigen/2.0.nix {};
