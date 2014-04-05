@@ -6524,6 +6524,8 @@ let
 
   elasticmq = callPackage ../servers/elasticmq { };
 
+  elliptics = callPackage ../servers/elliptics { };
+
   felix = callPackage ../servers/felix { };
 
   felix_remoteshell = callPackage ../servers/felix/remoteshell.nix { };
