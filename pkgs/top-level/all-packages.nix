@@ -4139,6 +4139,8 @@ let
 
   beecrypt = callPackage ../development/libraries/beecrypt { };
 
+  blackhole = callPackage ../development/libraries/blackhole { };
+
   boehmgc = callPackage ../development/libraries/boehm-gc { };
 
   boolstuff = callPackage ../development/libraries/boolstuff { };
