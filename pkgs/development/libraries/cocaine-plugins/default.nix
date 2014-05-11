@@ -1,13 +1,13 @@
 { stdenv, fetchgit, cmake, boost, cocaine_core, curl, libnl, libswarm2, libtool, scatterOutputHook }:
 
 stdenv.mkDerivation rec {
-  version = "0.11.2.4";
+  version = "0.11.2.5";
   name = "cocaine_plugins-${version}";
 
   src = fetchgit {
     url = "https://github.com/cocaine/cocaine-plugins.git";
-    rev = "refs/heads/v0.11";
-    sha256 = "5a6cac460758986ef77a3142580bad30836c3e765b768583e7e7c23c62ee7229";
+    rev = "2c663fb0400af05b0e2da94cc77d10a5942a4414"; #0.11.2.5 missing tag
+    sha256 = "0857983fcf8a7924f18b246c73e0c2df705481fcd9b3c88e36b5b85148a184cb";
   };
 
   buildInputs = [ cmake cocaine_core curl libnl libswarm2 libtool scatterOutputHook ];
