@@ -38,6 +38,8 @@ rec {
   distutils-cfg = callPackage ../development/python-modules/distutils-cfg { };
 
   buildPythonPackage = callPackage ../development/python-modules/generic { };
+  
+  buildPythonBindings = callPackage (import ../development/python-modules/generic/bindings.nix) { };
 
   wrapPython = pkgs.makeSetupHook
     { deps = pkgs.makeWrapper;
@@ -993,6 +995,30 @@ rec {
       description = "Python module for handling HTML forms on the client side";
     };
   });
+  
+  cocaine = buildPythonBindings rec {
+      name = "cocaine-${pkgs.cocaine_core.version}";
+      package = pkgs.cocaine_core;
+  };
+  
+  cocaine_tools = buildPythonPackage rec {
+    version = "0.11.4.0";
+    name = "cocaine_tools-${version}";
+
+    buildInputs = [ opster cocaine ];
+    
+    src = fetchgit {
+      url = "https://github.com/cocaine/cocaine-tools.git";
+      rev = "09a745e3d3b9cc042655fffc55a30879f63b531c";  # 0.11.4.0 unpushed tag
+      sha256 = "4c068daff3616f1ae94efc363eef9ddf8ab08098c4fad740865555881ccb95a7";
+    };
+
+    meta = with stdenv.lib; {
+      homepage = https://github.com/cocaine/cocaine-tools;
+      license = licenses.lgpl3;
+      description = "Cocaine - Toolset";
+    };
+  };
 
 
   cogapp = buildPythonPackage rec {
@@ -1222,6 +1248,12 @@ rec {
       description = "An interpreter to help writing C extensions for Python 2";
       platforms = stdenv.lib.platforms.all;
     };
+  };
+  
+
+  elliptics = buildPythonBindings rec {
+      name = "elliptics-${pkgs.elliptics.version}";
+      package = pkgs.elliptics;
   };
 
   cryptacular = buildPythonPackage rec {
@@ -1908,6 +1940,17 @@ rec {
     };
 
     propagatedBuildInputs = [ logilab_common ];
+  };
+  
+
+  opster = buildPythonPackage rec {
+    version = "4.1";
+    name = "opster-${version}";
+
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/source/o/opster/opster-${version}.tar.gz";
+      sha256 = "1ibm545bga3q76ghpji87scqkyz1s4ylfxcah4fpj639ri44qlbp";
+    };
   };
 
 
