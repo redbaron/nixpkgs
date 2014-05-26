@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "https://github.com/reverbrain/eblob.git";
     rev = "refs/tags/v${version}";
-    sha256 = "e78aad173c1d2a7f5e7410b48adfc102042b6904eb6bf5c44d3ef7567a2106c1";
+    sha256 = "ee49bd4bbb0fd83aca7e1c1d22bde9d02b7cb27fde7ee554d205ba45530d91ea";
   };
 
   nativeBuildInputs = [scatterOutputHook ];
