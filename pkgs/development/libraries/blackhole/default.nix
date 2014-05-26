@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "https://github.com/3Hren/blackhole.git";
     rev = "refs/tags/v{$version}";
-    sha256 = "cfbef50123734ffb9e94c31d5fc70e93a705d6b794de40a42adc50abaadb4d3c";
+    sha256 = "222ac73d279f6e8b55ce6b393aef676e699a73df7df977a7534ce505034cd4dd";
   };
   
   cmakeFlags = [
