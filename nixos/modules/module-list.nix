@@ -84,7 +84,7 @@
   ./services/backup/rsnapshot.nix
   ./services/backup/sitecopy-backup.nix
   ./services/backup/tarsnap.nix
-  ./services/cloud/cocaine.nix
+  ./services/cloud/cocaine/default.nix
   ./services/continuous-integration/jenkins/default.nix
   ./services/continuous-integration/jenkins/slave.nix
   ./services/databases/4store-endpoint.nix
