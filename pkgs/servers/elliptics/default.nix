@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, cmake, python, boost, eblob, cocaine_core, cocaine_framework_native, react, blackhole, libtool, scatterOutputHook }:
+{ stdenv, fetchgit, cmake, pythonPackages, boost, eblob, cocaine_core, cocaine_framework_native, react, blackhole, libtool }:
 
 stdenv.mkDerivation rec {
   version = "2.25.4.11";
@@ -10,13 +10,15 @@ stdenv.mkDerivation rec {
     sha256 = "39ad3faf72a707f030aa2936f812031d8d0345d69940c5c861d2cdf0de27ebb6";
   };
   
-  outputs = [ "out" "bin" "doc" "python" ];
-  files_bin = [ "/bin/*" "/lib/*.so*" "/lib/cocaine" ];
-  files_python = [ "/lib/python*" ];
+  #outputs = [ "out" "bin"  ];
+  #files_bin = [ "/bin/*" "/lib/*.so*" "/lib/cocaine" "/lib/python*" ];
+  #files_python = [ "/lib/python*" ];
 
   cmakeFlags = [ "-DCMAKE_BUILD_TYPE=RelWithDebInfo" ];
   
-  buildInputs = [ cmake python boost eblob cocaine_core cocaine_framework_native react blackhole libtool scatterOutputHook ];
+  buildInputs = [ cmake pythonPackages.python boost eblob cocaine_core cocaine_framework_native react blackhole libtool pythonPackages.wrapPython ];
+  
+  preFixup = ''wrapPythonPrograms'';
 
   enableParallelBuilding = true;
 }
